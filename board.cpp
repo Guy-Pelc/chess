@@ -36,31 +36,33 @@ Point blackKingLoc;
 				_board[i][j]=nullptr;
 			}
 		}
-		// _board[1][1] = new Soldier(BLACK);
-		// _board[2][1] = new Soldier(WHITE);
-		// _board[2][2] = new Knight(WHITE);
+		_board[1][1] = new Soldier(BLACK);
+		_board[2][1] = new Soldier(WHITE);
+		_board[2][2] = new Queen(WHITE);
 
 
-		int row = 1;
-		PLAYER curColor = WHITE;
-		for (int i = 0; i < 2; ++i)
-		{
-			_board[row][1] = new Rook(curColor);
-			_board[row][2] = new Knight(curColor);
-			_board[row][3] = new Bishop(curColor);
-			_board[row][4] = new King(curColor);
-			_board[row][5] = new Queen(curColor);
-			_board[row][6] = new Bishop(curColor);
-			_board[row][7] = new Knight(curColor);
-			_board[row][8] = new Rook(curColor);
-			row = 8;
-			curColor = BLACK;
-		}
-		for (int i = 1; i < 9; ++i)
-		{
-			_board[2][i]= new Soldier(WHITE);
-			_board[7][i]=new Soldier(BLACK);
-		}
+		// int row = 1;
+		// PLAYER curColor = WHITE;
+		// for (int i = 0; i < 2; ++i)
+		// {
+		// 	_board[row][1] = new Rook(curColor);
+		// 	_board[row][2] = new Knight(curColor);
+		// 	_board[row][3] = new Bishop(curColor);
+		// 	_board[row][4] = new King(curColor);
+		// 	_board[row][5] = new Queen(curColor);
+		// 	_board[row][6] = new Bishop(curColor);
+		// 	_board[row][7] = new Knight(curColor);
+		// 	_board[row][8] = new Rook(curColor);
+		// 	row = 8;
+		// 	curColor = BLACK;
+		// }
+		// for (int i = 1; i < 9; ++i)
+		// {
+		// 	_board[2][i]= new Soldier(WHITE);
+		// 	_board[7][i]=new Soldier(BLACK);
+		// }
+
+		// _board[]
 
 	}
 
@@ -108,7 +110,7 @@ Point blackKingLoc;
 			// {
 			// 	//FIX ME!!!!!!!
 			// }
-			// eatAt(e);
+			eatAt(e);
 			_board[s.row][s.col]=nullptr;
 			_board[e.row][e.col]=currUnit;
 			// currUnit->setHasMoved();
