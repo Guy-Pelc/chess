@@ -13,6 +13,7 @@
 
 using std::string;
 using std::cout;
+using std::endl;
 
 string ILLEGAL_MOVE = "\33[37;41millegal move\33[0m\n";
 string endL = "\33[0m\n";
@@ -27,6 +28,32 @@ Point whiteKingLoc;
 Point blackKingLoc;
 
 
+bool Board::isKingExposed(PLAYER player)
+	{
+		Point kingLocation = (player==WHITE) ? whiteKingLoc : blackKingLoc;
+		cout<<"king location: "<<kingLocation<<endl;
+		// PLAYER attackingPlayer = (player==WHITE) ? BLACK : WHITE;
+		for (int row=1;row<=8;row++)
+		{
+			for (int col=1;col<=8;col++)
+			{
+				Unit *curUnit=_board[row][col];
+				if (curUnit==nullptr) continue;
+				// if (curUnit->getPlayer==player) continue;
+				
+				Point curLocation;
+				curLocation.row = row;
+				curLocation.col = col;
+				if (curUnit->move(curLocation,kingLocation,_board)==true) 
+					{
+						std::cout<<"location of offender:"<<curLocation<<std::endl;
+						return true;
+					}
+			}
+		}
+
+		return false;
+	}
 	void Board::resetBoard()
 	{
 		for (int i = 0; i <= 8; ++i)
@@ -36,12 +63,25 @@ Point blackKingLoc;
 				_board[i][j]=nullptr;
 			}
 		}
-		_board[2][2] = new Queen(WHITE);
-		_board[1][4] = new Soldier(WHITE);
+		
+		blackKingLoc.row = 1;
+		blackKingLoc.col = 8;
 
-		_board[2][4] = new Soldier(BLACK);
-		_board[2][3] = new Soldier(BLACK);
-		_board[2][5] = new Soldier(BLACK);
+		whiteKingLoc.row = 1;
+		whiteKingLoc.col = 1;
+
+		_board[whiteKingLoc.row][whiteKingLoc.col] = new King(WHITE);
+		_board[blackKingLoc.row][blackKingLoc.col] = new King(BLACK);
+		
+		_board[4][4] = new Queen(BLACK);
+		_board[4][3] = new Queen(WHITE);
+		
+		// _board[2][2] = new Queen(WHITE);
+		// _board[1][4] = new Soldier(WHITE);
+
+		// _board[2][4] = new Soldier(BLACK);
+		// _board[2][3] = new Soldier(BLACK);
+		// _board[2][5] = new Soldier(BLACK);
 		
 
 
@@ -69,7 +109,7 @@ Point blackKingLoc;
 		// _board[]
 
 	}
-
+	
 	bool Board::moveUnit(std::string str,bool whiteTurn)
 	{
 		//PARSE INPUT
@@ -110,14 +150,28 @@ Point blackKingLoc;
 				return false;
 			}
 			// std::cout<<"here 103!";
-			// if (currUnit->isKing())
-			// {
-			// 	//FIX ME!!!!!!!
-			// }
+			if (currUnit->isKing())
+			{
+				if (currUnit->getPlayer()==WHITE)
+				{
+					std::cout<<"white king moved!!\n";
+					whiteKingLoc = e;
+				}
+				else
+				{
+					std::cout<<"black king moved!!\n";
+					blackKingLoc = e;
+				}
+				
+			}
+
 			eatAt(e);
 			_board[s.row][s.col]=nullptr;
 			_board[e.row][e.col]=currUnit;
 			currUnit->setHasMoved();
+
+			//check if enemy king is exposed, 
+
 			return true;
 		}
 		else
