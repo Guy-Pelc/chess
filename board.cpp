@@ -113,7 +113,7 @@ Point blackKingLoc;
 			eatAt(e);
 			_board[s.row][s.col]=nullptr;
 			_board[e.row][e.col]=currUnit;
-			// currUnit->setHasMoved();
+			currUnit->setHasMoved();
 			return true;
 		}
 		else
