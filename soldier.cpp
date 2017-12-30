@@ -9,12 +9,12 @@ Soldier::Soldier(PLAYER player)
 }
 bool Soldier::move(Point s,Point e, Unit* b[][9])
 {
-	std::cout<<"here! s,e:"<<s<<e<<std::endl;
+	// std::cout<<"here! s,e:"<<s<<e<<std::endl;
 	int direction = (_player==WHITE) ? 1 : -1;
 	//check if unit can move like that
 	if (s.row + direction == e.row)
 	{
-		cout<<"here 17";
+		// cout<<"here 17";
 		//move (not eat), must not be any collision
 		if ( s.col == e.col && b[e.row][e.col]==nullptr)
 		{
@@ -24,7 +24,7 @@ bool Soldier::move(Point s,Point e, Unit* b[][9])
 		// eat, must be diagonal must contain enemy
 		else if ((s.col == e.col+1) || (s.col == e.col-1))
 		{
-			cout<<"here 27";
+			// cout<<"here 27";
 			// std::cout<<"checking if can eat\n";
 			Unit* toBeEaten = b[e.row][e.col];
 			if (toBeEaten!=nullptr && toBeEaten->getPlayer()!=_player)
@@ -37,6 +37,6 @@ bool Soldier::move(Point s,Point e, Unit* b[][9])
 			}
 		}
 	}
-	cout<<"here 39";
+	// cout<<"here 39";
 	return false;
 }
