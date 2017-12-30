@@ -15,10 +15,10 @@ bool Knight::move(Point s, Point e, Unit* b[][9])
 {
 	Point dir = e-s;
 	//assert not same place
-	if (dir.x==0 || dir.y==0) return false;
+	if (dir.row==0 || dir.col==0) return false;
 
-	if (abs(dir.x+dir.y)>3) return false;
-	if (abs(dir.x/dir.y)==2 || abs(dir.y/dir.x)==2) return  moveByStep(dir,s,e,b,_player);
+	if (abs(dir.row+dir.col)>3) return false;
+	if (abs(dir.row/dir.col)==2 || abs(dir.col/dir.row)==2) return  moveByStep(dir,s,e,b,_player);
 	
 	return false;
 	
