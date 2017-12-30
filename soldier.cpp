@@ -30,10 +30,21 @@ bool Soldier::move(Point s,Point e, Unit* b[][9])
 		//check 2nd tile is empty
 		if (b[e.row][e.col]!=nullptr) return false;
 		return true;
-
-		
 	}
-	
+	//if soldier eats, not moves.
+	if (abs(dir.col)==1)
+	{
+		//check advances only 1 row
+		if (abs(dir.row)!=1)return false;
+		//check tile not empty
+		Unit *toBeEaten = b[e.row][e.col];
+		if (toBeEaten==nullptr) return false;
+		
+		//check tile contains enemy
+		if (toBeEaten->getPlayer()==_player) return false;
+		return true;
+	}
+	return false;
 
 
 

@@ -36,9 +36,13 @@ Point blackKingLoc;
 				_board[i][j]=nullptr;
 			}
 		}
-		_board[1][1] = new Soldier(BLACK);
-		_board[2][1] = new Soldier(WHITE);
 		_board[2][2] = new Queen(WHITE);
+		_board[1][4] = new Soldier(WHITE);
+
+		_board[2][4] = new Soldier(BLACK);
+		_board[2][3] = new Soldier(BLACK);
+		_board[2][5] = new Soldier(BLACK);
+		
 
 
 		// int row = 1;
