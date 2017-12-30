@@ -3,7 +3,7 @@
 #include "soldier.h"
 #include "rook.h"
 #include "bishop.h"
-// #include "queen.h"
+#include "queen.h"
 // #include "knight.h"
 // #include "king.h"
 
@@ -38,7 +38,7 @@ Point blackKingLoc;
 		}
 		_board[1][1] = new Soldier(BLACK);
 		_board[2][1] = new Soldier(WHITE);
-		_board[2][2] = new Bishop(WHITE);
+		_board[2][2] = new Queen(WHITE);
 
 
 		// int row = 1;

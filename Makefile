@@ -4,7 +4,7 @@ LDFLAGS =
 
 # User defined classes and modules. (no file suffixes)
 # CLASSES = chess units soldier rook board point unix bishop queen knight king
-CLASSES = chess units soldier board unix point rook bishop
+CLASSES = chess units soldier board unix point rook bishop queen
 
 # Prepare object and source file list using pattern substitution func.
 OBJS = $(patsubst %, %.o,  $(CLASSES))
