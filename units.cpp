@@ -19,6 +19,7 @@ bool Unit::moveByStep(Point dir,Point s, Point e,Unit* b[][9], PLAYER _player)
 {
 	while (!(s==e))
 	{
+		std::cout<<"HERE 22 UNITS.CPP";
 		s = s+dir;
 		Unit *currentTile = b[s.row][s.col];
 		if (currentTile!=nullptr)
