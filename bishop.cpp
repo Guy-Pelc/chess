@@ -14,10 +14,10 @@ Bishop::Bishop(PLAYER player)
 bool Bishop::move(Point s, Point e, Unit* b[][9])
 {
 	Point dir = e-s;
-	if (dir.x==0 || dir.y==0) return false;
-	dir.x = dir.x/abs(dir.x);
-	dir.y = dir.y/abs(dir.y);
-	if (abs(dir.x*dir.y)!=1) return false;
+	if (dir.row==0 || dir.col==0) return false;
+	dir.row = dir.row/abs(dir.row);
+	dir.col = dir.col/abs(dir.col);
+	if (abs(dir.row*dir.col)!=1) return false;
 	
 	// return moveByStep
 	// return moveByStep();
