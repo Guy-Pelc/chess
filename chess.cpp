@@ -39,13 +39,37 @@ int test10()
 }
 int test11()
 {
-	int a = -50;
-	cout<<abs(a);
+	Board b;
+	
+	// std::string whiteName;
+	// std::string blackName; 
+
+	// std::cout<<"Enter white player name:\n";
+	// std::cin>>whiteName;
+	// std::cout<<"Enter black player name:\n";
+	// std::cin>> blackName;
+
+	bool whiteTurn = true;
+	std::string input;
+
+	// std::cout<<"\33[2J";
+	while (true)
+	{
+		b.printBoard();
+		//ADD CHECK FOR CHECK!!
+		// std::string curName = (whiteTurn) ? whiteName : blackName;
+		std::cout<<": please enter your move:\n";
+		std::cin>>input;
+
+		b.moveUnit(input,whiteTurn);
+		// if () whiteTurn = !whiteTurn;
+		//ADD PLAYER X WON!!
+	}
 }
 int main()
 {
 	// std::cout<<"hello world\n\n";
-	test10();	
+	test11();	
 }
 
 // void test5()

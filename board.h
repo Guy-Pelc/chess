@@ -10,14 +10,14 @@ using std::string;
 
 class Board
 {
-	Unit* _board[9][9];
+	Unit* _board[9][9];  // [ROW][COL]
 public:
 	Board();
 	void resetBoard();
 	void printBoard();
 	bool moveUnit(Point s,Point e, bool whiteTurn);
 	bool moveUnit(std::string str, bool whiteTurn);
-	Unit* getUnitAt(Point p) {return _board[p.x][p.y];};
+	Unit* getUnitAt(Point p) {return _board[p.row][p.col];};
 
 	void eatAt(Point e);
 };

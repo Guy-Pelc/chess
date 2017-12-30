@@ -4,8 +4,10 @@
 #include <iostream>
 
 typedef struct {
-int x;
-int y;
+int col; //was x
+int row; //was y
+
+
 } Point;
 
 Point operator+(Point a, Point b);

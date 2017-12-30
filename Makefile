@@ -3,7 +3,8 @@ CCFLAGS =-c
 LDFLAGS = 
 
 # User defined classes and modules. (no file suffixes)
-CLASSES = chess units soldier rook board point unix bishop queen knight king
+# CLASSES = chess units soldier rook board point unix bishop queen knight king
+CLASSES = chess units soldier board unix point
 
 # Prepare object and source file list using pattern substitution func.
 OBJS = $(patsubst %, %.o,  $(CLASSES))

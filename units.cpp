@@ -20,7 +20,7 @@ bool Unit::moveByStep(Point dir,Point s, Point e,Unit* b[][9], PLAYER _player)
 	while (!(s==e))
 	{
 		s = s+dir;
-		Unit *currentTile = b[s.x][s.y];
+		Unit *currentTile = b[s.row][s.col];
 		if (currentTile!=nullptr)
 		{
 			//path blocked

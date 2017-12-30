@@ -1,11 +1,11 @@
 #include "board.h"
 #include "unix.h"
 #include "soldier.h"
-#include "rook.h"
-#include "bishop.h"
-#include "queen.h"
-#include "knight.h"
-#include "king.h"
+// #include "rook.h"
+// #include "bishop.h"
+// #include "queen.h"
+// #include "knight.h"
+// #include "king.h"
 
 #include <iostream>
 #include <cassert>
@@ -26,7 +26,6 @@ string EMPTY = " ";
 Point whiteKingLoc;
 Point blackKingLoc;
 
-enum col{A=1,B,C,D,E,F,G,H,};
 
 	void Board::resetBoard()
 	{
@@ -37,70 +36,81 @@ enum col{A=1,B,C,D,E,F,G,H,};
 				_board[i][j]=nullptr;
 			}
 		}
-		int row = 1;
-		PLAYER curColor = WHITE;
-		for (int i = 0; i < 2; ++i)
-		{
-			_board[row][1] = new Rook(curColor);
-			_board[row][2] = new Knight(curColor);
-			_board[row][3] = new Bishop(curColor);
-			_board[row][4] = new King(curColor);
-			_board[row][5] = new Queen(curColor);
-			_board[row][6] = new Bishop(curColor);
-			_board[row][7] = new Knight(curColor);
-			_board[row][8] = new Rook(curColor);
-			row = 8;
-			curColor = BLACK;
-		}
-		for (int i = 1; i < 9; ++i)
-		{
-			_board[2][i]= new Soldier(WHITE);
-			_board[7][i]=new Soldier(BLACK);
-		}
+		_board[1][1] = new Soldier(WHITE);
+		_board[2][1] = new Soldier(BLACK);
+		_board[2][2] = new Soldier(BLACK);
+
+
+		// int row = 1;
+		// PLAYER curColor = WHITE;
+		// for (int i = 0; i < 2; ++i)
+		// {
+		// 	_board[row][1] = new Rook(curColor);
+		// 	_board[row][2] = new Knight(curColor);
+		// 	_board[row][3] = new Bishop(curColor);
+		// 	_board[row][4] = new King(curColor);
+		// 	_board[row][5] = new Queen(curColor);
+		// 	_board[row][6] = new Bishop(curColor);
+		// 	_board[row][7] = new Knight(curColor);
+		// 	_board[row][8] = new Rook(curColor);
+		// 	row = 8;
+		// 	curColor = BLACK;
+		// }
+		// for (int i = 1; i < 9; ++i)
+		// {
+		// 	_board[2][i]= new Soldier(WHITE);
+		// 	_board[7][i]=new Soldier(BLACK);
+		// }
 
 	}
 
 	bool Board::moveUnit(std::string str,bool whiteTurn)
 	{
 		//PARSE INPUT
-		Point s = {str[1]-48,str[0]-64};
-		Point e = {str[3]-48,str[2]-64};
+		Point s = {str[0]-64,str[1]-48};
+		Point e = {str[2]-64,str[3]-48};
 		// int sCol = str[0]-64;
 		// int sRow = str[1]-48;
 		// int eCol = str[2]-64;
 		// int eRow = str[3]-48;
-		
+		std::cout<<s<<e;
 		return moveUnit(s,e,whiteTurn);
 	}
-	void Board::eatAt(Point e)
-	{
-		Unit *toBeEaten = _board[e.x][e.y];
-		if (toBeEaten!=nullptr)
-		{
-			delete toBeEaten;
-			toBeEaten = nullptr;
-		}
-		return;
-	}
+	
 	bool Board::moveUnit(Point s,Point e,bool whiteTurn)
 	{
 		PLAYER currentPlayer = (whiteTurn) ? WHITE : BLACK;
-		Unit *currUnit = _board[s.x][s.y];
-		if (1<=s.x && s.x<=8 &&
-			1<=e.x && e.x<=8 &&
-			1<=s.y && s.y<=8 &&
-			1<=e.y && e.y<=8 &&
-			currUnit!=nullptr && 
-			currUnit->getPlayer() == currentPlayer &&
-			currUnit->move(s,e,_board))
+		// Unit *currUnit = _board[s.col][s.row];
+		Unit *currUnit = _board[s.row][s.col];
+		if (1<=s.row && s.row<=8 &&
+			1<=e.row && e.row<=8 &&
+			1<=s.col && s.col<=8 &&
+			1<=e.col && e.col<=8 )
+			
 		{
+			if(currUnit==nullptr  ) {
+				std::cout<<"NULLPTR!";
+				return false;
+			}
+			if (currUnit->getPlayer() != currentPlayer)
+			{
+				std::cout<<"wonrg player!";
+				return false;
+			}
+			
+			if (currUnit->move(s,e,_board)== false)
+			{
+				std::cout<<"invalid move";
+				return false;
+			}
+			std::cout<<"here 103!";
 			// if (currUnit->isKing())
 			// {
 			// 	//FIX ME!!!!!!!
 			// }
 			// eatAt(e);
-			_board[s.x][s.y]=nullptr;
-			_board[e.x][e.y]=currUnit;
+			_board[s.row][s.col]=nullptr;
+			_board[e.row][e.col]=currUnit;
 			// currUnit->setHasMoved();
 			return true;
 		}
@@ -109,6 +119,16 @@ enum col{A=1,B,C,D,E,F,G,H,};
 			std::cout<<ILLEGAL_MOVE;
 			return false;
 		}
+	}
+	void Board::eatAt(Point e)
+	{
+		Unit *toBeEaten = _board[e.row][e.col];
+		if (toBeEaten!=nullptr)
+		{
+			delete toBeEaten;
+			toBeEaten = nullptr;
+		}
+		return;
 	}
 	Board::Board()
 	{
