@@ -5,7 +5,7 @@
 #include "bishop.h"
 #include "queen.h"
 // #include "knight.h"
-// #include "king.h"
+#include "king.h"
 
 #include <iostream>
 #include <cassert>
@@ -38,7 +38,7 @@ Point blackKingLoc;
 		}
 		_board[1][1] = new Soldier(BLACK);
 		_board[2][1] = new Soldier(WHITE);
-		_board[2][2] = new Queen(WHITE);
+		_board[2][2] = new King(WHITE);
 
 
 		// int row = 1;
