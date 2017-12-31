@@ -4,7 +4,7 @@ using namespace std;
 Soldier::Soldier(PLAYER player) 
 :Unit(player)
 {
-	std::cout<<"Soldier constructor\n";
+	// std::cout<<"Soldier constructor\n";
 	_unix =playerToString(player) + unitToString(SOLDIER) ;
 }
 bool Soldier::move(Point s,Point e, Unit* b[][9])

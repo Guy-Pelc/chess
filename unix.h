@@ -5,7 +5,7 @@
 
 enum PLAYER
 {
-	WHITE,
+	WHITE=0,
 	BLACK,
 };
 

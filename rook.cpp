@@ -9,7 +9,7 @@ using std::endl;
 Rook::Rook(PLAYER player)
 :Unit(player)
 {
-	std::cout<<"Rook constructor\n";
+	// std::cout<<"Rook constructor\n";
 	_unix = playerToString(player) + unitToString(ROOK);
 }
 bool Rook::move(Point s, Point e, Unit* b[][9])

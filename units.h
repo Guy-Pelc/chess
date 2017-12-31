@@ -13,7 +13,8 @@ public:
 	// static void testFun();
 	// Unit() ;
 	Unit(PLAYER player);
-	virtual ~Unit(){std::cout<<"Unit destructor\n";} ;
+	virtual ~Unit(){};
+	// virtual ~Unit(){std::cout<<"Unit destructor\n";} ;
 	
 	virtual bool move(Point s,Point e, Unit* b[][9])=0;
 	static bool moveByStep(Point dir,Point s, Point e,Unit* b[][9], PLAYER _player);

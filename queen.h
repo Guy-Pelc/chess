@@ -7,8 +7,11 @@ class Queen : public Unit
 {
 public:
 	Queen(PLAYER player);
-	~Queen(){std::cout<<"Queen destructor\n";};
+	~Queen(){};
+	// ~Queen(){std::cout<<"Queen destructor\n";};
 	bool move(Point s,Point e, Unit* b[][9]) override;
+	Queen *clone() override;
+
 };
 
 #endif

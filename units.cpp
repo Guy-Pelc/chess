@@ -4,7 +4,7 @@
 Unit::Unit(PLAYER player) 
 {
 	_player = player;
-	std::cout<<"Unit constructor\n";
+	// std::cout<<"Unit constructor\n";
 }
 bool Unit::move(Point s,Point e, Unit* b[][9] )
 {

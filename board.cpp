@@ -28,8 +28,10 @@ string EMPTY = " ";
 //if there are no possible moves, return true;
 bool Board::existsPossibleMove(PLAYER player)
 {
+	cout<<"checking if possible move fo player: "<<player<<"...\n";
 	bool isWhiteTurn = (player==WHITE) ? true:false;
 	for (int sRow=1;sRow<9;sRow++)
+	{
 		for (int sCol=1;sCol<9;sCol++)
 		{	
 		Point s;
@@ -57,14 +59,15 @@ bool Board::existsPossibleMove(PLAYER player)
 						}
 					}
 				}
-				//if didn't find any possible move, it is checkmate.
-				return false;
 			}
 		}
+	}
+	//if didn't find any possible move, it is checkmate.
+	return false;
 }
 bool Board::isKingExposed(PLAYER player)
 	{
-		cout<<"checking board::isKingExposed\n";
+		cout<<"checking board::isKingExposed, player "<<player<<"...\n";
 		Point kingLocation = (player==WHITE) ? whiteKingLoc : blackKingLoc;
 		cout<<"king location: "<<kingLocation<<endl;
 		// PLAYER attackingPlayer = (player==WHITE) ? BLACK : WHITE;
@@ -74,6 +77,7 @@ bool Board::isKingExposed(PLAYER player)
 			{
 				Unit *curUnit=_board[row][col];
 				if (curUnit==nullptr) continue;
+				else if (curUnit->getPlayer()==player) continue;
 				// if (curUnit->getPlayer==player) continue;
 				
 				Point curLocation;
@@ -81,12 +85,13 @@ bool Board::isKingExposed(PLAYER player)
 				curLocation.col = col;
 				if (curUnit->move(curLocation,kingLocation,_board)==true) 
 					{
-						std::cout<<"location of offender:"<<curLocation<<std::endl;
+
+						std::cout<<"EXPOSED! location of offender:"<<curLocation<<std::endl;
 						return true;
 					}
 			}
 		}
-
+		cout<<"king not exposed\n";
 		return false;
 	}
 
@@ -104,15 +109,15 @@ void Board::resetBoard()
 		blackKingLoc.col = 1;
 
 		whiteKingLoc.row = 8;
-		whiteKingLoc.col = 1;
+		whiteKingLoc.col = 2;
 
 		_board[whiteKingLoc.row][whiteKingLoc.col] = new King(WHITE);
 		_board[blackKingLoc.row][blackKingLoc.col] = new King(BLACK);
 		
-		// _board[4][4] = new Queen(BLACK);
+		_board[4][4] = new Queen(BLACK);
 		// _board[4][3] = new Queen(WHITE);
 		
-		_board[2][3] = new Rook(WHITE);
+		_board[2][3] = new Soldier(WHITE);
 		// _board[1][1] = new Soldier(WHITE);
 
 		// _board[2][2] = new Queen(WHITE);
@@ -224,12 +229,12 @@ bool Board::moveUnitHelper(Point s,Point e,bool whiteTurn)
 			{
 				if (currUnit->getPlayer()==WHITE)
 				{
-					std::cout<<"white king moved!!\n";
+					// std::cout<<"white king moved!!\n";
 					whiteKingLoc = e;
 				}
 				else
 				{
-					std::cout<<"black king moved!!\n";
+					// std::cout<<"black king moved!!\n";
 					blackKingLoc = e;
 				}
 				
@@ -320,7 +325,7 @@ Board::Board(Point wKing, Point bKing, Unit* b[9][9])
 		{
 			if (b[row][col]!=nullptr)
 			{
-				std::cout<<"cloning a unit...\n";
+				// std::cout<<"cloning a unit...\n";
 				_board[row][col] = b[row][col]->clone();
 			}
 		}
