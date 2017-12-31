@@ -25,7 +25,7 @@ int test10()
 	// std::cout<<"Enter black player name:\n";
 	// std::cin>> blackName;
 
-	bool whiteTurn = false;
+	bool whiteTurn = true;
 	std::string input;
 	// bool isValidMove=false;
 	std::cout<<"\33[2J";

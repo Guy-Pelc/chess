@@ -105,19 +105,19 @@ void Board::resetBoard()
 			}
 		}
 		
-		blackKingLoc.row = 1;
-		blackKingLoc.col = 1;
+		blackKingLoc.row = 8;
+		blackKingLoc.col = 4;
 
-		whiteKingLoc.row = 8;
-		whiteKingLoc.col = 2;
+		whiteKingLoc.row = 1;
+		whiteKingLoc.col = 4;
 
-		_board[whiteKingLoc.row][whiteKingLoc.col] = new King(WHITE);
-		_board[blackKingLoc.row][blackKingLoc.col] = new King(BLACK);
+		// _board[whiteKingLoc.row][whiteKingLoc.col] = new King(WHITE);
+		// _board[blackKingLoc.row][blackKingLoc.col] = new King(BLACK);
 		
-		_board[4][4] = new Queen(BLACK);
-		// _board[4][3] = new Queen(WHITE);
+		// _board[4][4] = new Queen(BLACK);
+		// // _board[4][3] = new Queen(WHITE);
 		
-		_board[2][3] = new Bishop(WHITE);
+		// _board[2][3] = new Bishop(WHITE);
 		// _board[1][1] = new Soldier(WHITE);
 
 		// _board[2][2] = new Queen(WHITE);
@@ -127,30 +127,31 @@ void Board::resetBoard()
 		// _board[2][3] = new Soldier(BLACK);
 		// _board[2][5] = new Soldier(BLACK);
 		
+		_board[blackKingLoc.row][blackKingLoc.col] = new King(BLACK);
+		_board[whiteKingLoc.row][whiteKingLoc.col] = new King(WHITE);
+
+		int row = 1;
+		PLAYER curColor = WHITE;
+		for (int i = 0; i < 2; ++i)
+		{
+			_board[row][1] = new Rook(curColor);
+			_board[row][2] = new Knight(curColor);
+			_board[row][3] = new Bishop(curColor);
+			
+			_board[row][5] = new Queen(curColor);
+			_board[row][6] = new Bishop(curColor);
+			_board[row][7] = new Knight(curColor);
+			_board[row][8] = new Rook(curColor);
+			row = 8;
+			curColor = BLACK;
+		}
+		for (int i = 1; i < 9; ++i)
+		{
+			_board[2][i]= new Soldier(WHITE);
+			_board[7][i]=new Soldier(BLACK);
+		}
 
 
-		// int row = 1;
-		// PLAYER curColor = WHITE;
-		// for (int i = 0; i < 2; ++i)
-		// {
-		// 	_board[row][1] = new Rook(curColor);
-		// 	_board[row][2] = new Knight(curColor);
-		// 	_board[row][3] = new Bishop(curColor);
-		// 	_board[row][4] = new King(curColor);
-		// 	_board[row][5] = new Queen(curColor);
-		// 	_board[row][6] = new Bishop(curColor);
-		// 	_board[row][7] = new Knight(curColor);
-		// 	_board[row][8] = new Rook(curColor);
-		// 	row = 8;
-		// 	curColor = BLACK;
-		// }
-		// for (int i = 1; i < 9; ++i)
-		// {
-		// 	_board[2][i]= new Soldier(WHITE);
-		// 	_board[7][i]=new Soldier(BLACK);
-		// }
-
-		// _board[]
 
 	}
 
