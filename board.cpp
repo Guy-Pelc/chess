@@ -117,7 +117,7 @@ void Board::resetBoard()
 		_board[4][4] = new Queen(BLACK);
 		// _board[4][3] = new Queen(WHITE);
 		
-		_board[2][3] = new Knight(WHITE);
+		_board[2][3] = new Bishop(WHITE);
 		// _board[1][1] = new Soldier(WHITE);
 
 		// _board[2][2] = new Queen(WHITE);

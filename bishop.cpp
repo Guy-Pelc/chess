@@ -5,10 +5,17 @@
 using std::abs;
 using std::cout;
 
+Bishop *Bishop::clone()
+{
+	Bishop *copy = new Bishop(_player);
+	copy->_hasMoved = _hasMoved;
+	return copy;
+}
+
 Bishop::Bishop(PLAYER player)
 :Unit(player)
 {
-	std::cout<<"Bishop constructor\n";
+	// std::cout<<"Bishop constructor\n";
 	_unix = playerToString(player) + unitToString(BISHOP);
 }
 bool Bishop::move(Point s, Point e, Unit* b[][9])

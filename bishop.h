@@ -6,8 +6,10 @@
 class Bishop : public Unit 
 {
 public:
+	Bishop *clone() override;
 	Bishop(PLAYER player);
-	~Bishop(){std::cout<<"Bishop destructor\n";};
+	~Bishop(){};
+	// ~Bishop(){std::cout<<"Bishop destructor\n";};
 	bool move(Point s,Point e, Unit* b[][9]) override;
 };
 
