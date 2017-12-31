@@ -24,7 +24,7 @@ public:
 	std::string getUnix() {return _unix;};
 	PLAYER getPlayer() {return _player;};
 	bool setHasMoved(){_hasMoved=true;};
-
+	bool getHasMoved(){return _hasMoved;};
 	virtual Unit *clone()=0;
 
 protected:

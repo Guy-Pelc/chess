@@ -28,7 +28,7 @@ string EMPTY = " ";
 //if there are no possible moves, return true;
 bool Board::existsPossibleMove(PLAYER player)
 {
-	cout<<"checking if possible move fo player: "<<player<<"...\n";
+	// cout<<"checking if possible move fo player: "<<player<<"...\n";
 	bool isWhiteTurn = (player==WHITE) ? true:false;
 	for (int sRow=1;sRow<9;sRow++)
 	{
@@ -51,7 +51,7 @@ bool Board::existsPossibleMove(PLAYER player)
 						Point e;
 						e.row = eRow;
 						e.col = eCol;
-						cout<<"checking move (s->e):"<<s<<e<<endl;
+						// cout<<"checking move (s->e):"<<s<<e<<endl;
 						//if there is a possible move, it is not checkmate.
 						if (boardCopy.moveUnit(s,e,isWhiteTurn))
 						{
@@ -67,9 +67,9 @@ bool Board::existsPossibleMove(PLAYER player)
 }
 bool Board::isKingExposed(PLAYER player)
 	{
-		cout<<"checking board::isKingExposed, player "<<player<<"...\n";
+		// cout<<"checking board::isKingExposed, player "<<player<<"...\n";
 		Point kingLocation = (player==WHITE) ? whiteKingLoc : blackKingLoc;
-		cout<<"king location: "<<kingLocation<<endl;
+		// cout<<"king location: "<<kingLocation<<endl;
 		// PLAYER attackingPlayer = (player==WHITE) ? BLACK : WHITE;
 		for (int row=1;row<=8;row++)
 		{
@@ -91,7 +91,7 @@ bool Board::isKingExposed(PLAYER player)
 					}
 			}
 		}
-		cout<<"king not exposed\n";
+		// cout<<"king not exposed\n";
 		return false;
 	}
 
@@ -114,7 +114,8 @@ void Board::resetBoard()
 		_board[blackKingLoc.row][blackKingLoc.col] = new King(BLACK);
 		_board[whiteKingLoc.row][whiteKingLoc.col] = new King(WHITE);
 
-		_board[7][1] = new Soldier(WHITE);
+		_board[1][1] = new Rook(WHITE);
+		_board[1][8] = new Rook(WHITE);
 
 
 
@@ -160,18 +161,18 @@ bool Board::moveUnit(std::string str,bool whiteTurn)
 		} 
 		else
 		{
-			cout<<ILLEGAL_MOVE;
+			// cout<<ILLEGAL_MOVE;
 			return false;
 		}
 	}
 bool Board::moveUnit(Point s,Point e,bool whiteTurn)
 {
 	Board copy(whiteKingLoc,blackKingLoc, _board);
-		cout<<"printing copy board after move try..:\n";
+		// cout<<"printing copy board after move try..:\n";
 		if (copy.moveUnitHelper(s,e,whiteTurn))
 		{
-			copy.printBoard();
-			cout<<"copyboard move success, now moving real board\n";
+			// copy.printBoard();
+			// cout<<"copyboard move success, now moving real board\n";
 
 			moveUnitHelper(s,e,whiteTurn);	
 
@@ -180,7 +181,7 @@ bool Board::moveUnit(Point s,Point e,bool whiteTurn)
 		else
 		{
 			copy.printBoard();
-			cout<<"copyboard failed. invalid move..\n";
+			// cout<<"copyboard failed. invalid move..\n";
 			return false;
 		}
 }	
@@ -209,7 +210,7 @@ bool Board::moveUnitHelper(Point s,Point e,bool whiteTurn)
 			}
 			if (currUnit->move(s,e,_board)== false)
 			{
-				cout<<"boardcpp 169\n";
+				// cout<<"boardcpp 169\n";
 				std::cout<<"invalid move\n";
 				return false;
 			}
@@ -232,7 +233,6 @@ bool Board::moveUnitHelper(Point s,Point e,bool whiteTurn)
 			eatAt(e);
 			_board[s.row][s.col]=nullptr;
 			_board[e.row][e.col]=currUnit;
-			//check for hatsraha
 
 			//check for pawn->queen
 			if (currUnit->isPawn() &&
@@ -254,7 +254,7 @@ bool Board::moveUnitHelper(Point s,Point e,bool whiteTurn)
 		}
 		else
 		{
-			std::cout<<ILLEGAL_MOVE;
+			// std::cout<<ILLEGAL_MOVE;
 			return false;
 		}
 	}

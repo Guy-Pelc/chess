@@ -38,7 +38,7 @@ int test10()
 		bool existsPossibleMove = b.existsPossibleMove(curPlayer);
 		
 		b.printBoard();
-		cout<<"possibelmove,check: "<<existsPossibleMove<<","<<isCheck<<endl;
+		// cout<<"possibelmove,check: "<<existsPossibleMove<<","<<isCheck<<endl;
 		if (isCheck && existsPossibleMove) std::cout<<CHECK_MSG;
 		else if (isCheck && !existsPossibleMove) 
 		{
