@@ -8,7 +8,7 @@ using std::cout;
 using std::string;
 #include <cmath>
 using std::abs;
-
+using namespace std;
 int test10()
 {
 	Board b;
@@ -30,11 +30,23 @@ int test10()
 		b.printBoard();
 
 		PLAYER curPlayer = (whiteTurn) ? WHITE : BLACK;
-		if (b.isKingExposed(curPlayer))
+		bool isCheck = b.isKingExposed(curPlayer);
+		bool existsPossibleMove = b.existsPossibleMove(curPlayer);
+		
+
+		cout<<"possibelmove,check: "<<existsPossibleMove<<","<<isCheck<<endl;
+		if (isCheck && existsPossibleMove) std::cout<<"Check!\n";
+		else if (isCheck && !existsPossibleMove) 
+		{
+			std::string winner = (whiteTurn) ? blackName : whiteName;
+			std::cout<<winner<<" won!\n";
+			return 0;	
+		}
+		else if (!isCheck && !existsPossibleMove)
 			{
-				std::cout<<"Check!\n";
+				std::cout<<"Tie, no winners!\n";
+				return 0;
 			}
-		//ADD CHECK FOR CHECK!!
 		std::string curName = (whiteTurn) ? whiteName : blackName;
 		std::cout<<curName<<": please enter your move:\n";
 		std::cin>>input;
@@ -62,12 +74,6 @@ int test11()
 	while (true)
 	{
 		b.printBoard();
-		//ADD CHECK FOR CHECK!!
-		// std::string curName = (whiteTurn) ? whiteName : blackName;
-		// if (b.isKingExposed(BLACK))
-		// 	{
-
-		// 	}
 		std::cout<<": please enter your move:\n";
 		std::cin>>input;
 

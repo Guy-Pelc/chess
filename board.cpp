@@ -24,8 +24,44 @@ string Black = "\33[30m";
 string White = "\33[36m";
 string EMPTY = " ";
 
-
-
+//assume king of player is exposed,
+//if there are no possible moves, return true;
+bool Board::existsPossibleMove(PLAYER player)
+{
+	bool isWhiteTurn = (player==WHITE) ? true:false;
+	for (int sRow=1;sRow<9;sRow++)
+		for (int sCol=1;sCol<9;sCol++)
+		{	
+		Point s;
+		s.row = sRow;
+		s.col = sCol;
+			
+			//if tile contains this player's unit
+			if (_board[s.row][s.col]!=nullptr &&
+				_board[s.row][s.col]->getPlayer() == player)
+			{
+				//check if there are any possible valid moves for that unit
+				Board boardCopy(whiteKingLoc,blackKingLoc, _board);
+				for (int eRow = 1;eRow<9;eRow++)
+				{
+					for (int eCol =1;eCol<9;eCol++)
+					{
+						Point e;
+						e.row = eRow;
+						e.col = eCol;
+						cout<<"checking move (s->e):"<<s<<e<<endl;
+						//if there is a possible move, it is not checkmate.
+						if (boardCopy.moveUnit(s,e,isWhiteTurn))
+						{
+							return true;
+						}
+					}
+				}
+				//if didn't find any possible move, it is checkmate.
+				return false;
+			}
+		}
+}
 bool Board::isKingExposed(PLAYER player)
 	{
 		cout<<"checking board::isKingExposed\n";
@@ -64,11 +100,11 @@ void Board::resetBoard()
 			}
 		}
 		
-		blackKingLoc.row = 3;
+		blackKingLoc.row = 1;
 		blackKingLoc.col = 1;
 
-		whiteKingLoc.row = 1;
-		whiteKingLoc.col = 4;
+		whiteKingLoc.row = 8;
+		whiteKingLoc.col = 1;
 
 		_board[whiteKingLoc.row][whiteKingLoc.col] = new King(WHITE);
 		_board[blackKingLoc.row][blackKingLoc.col] = new King(BLACK);
@@ -76,8 +112,8 @@ void Board::resetBoard()
 		// _board[4][4] = new Queen(BLACK);
 		// _board[4][3] = new Queen(WHITE);
 		
-		_board[2][1] = new Rook(BLACK);
-		_board[1][1] = new Soldier(WHITE);
+		_board[2][2] = new Rook(WHITE);
+		// _board[1][1] = new Soldier(WHITE);
 
 		// _board[2][2] = new Queen(WHITE);
 		// _board[1][4] = new Soldier(WHITE);

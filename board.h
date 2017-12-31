@@ -17,16 +17,7 @@ class Board
 public:
 	Board();
 	~Board();
-	// {
-	// 	for (int row=0; row<9;row++)
-	// 	{
-	// 		for (int col=0;col<9;col++)
-	// 		{
-	// 			if (_board[row][col]!=nullptr)
-	// 				delete _board[row][col];
-	// 		}
-	// 	}
-	// };
+	bool existsPossibleMove(PLAYER player);
 	Board(Point wKing, Point bKing, Unit* b[9][9]);
 	void resetBoard();
 	void printBoard();
