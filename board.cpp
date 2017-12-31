@@ -15,7 +15,7 @@ using std::string;
 using std::cout;
 using std::endl;
 
-string ILLEGAL_MOVE = "\33[37;41millegal move\33[0m\n";
+string ILLEGAL_MOVE = "illegal move\n";
 string endL = "\33[0m\n";
 string Teal = "\33[42m";
 string Green = "\33[46m";
@@ -103,7 +103,7 @@ void Board::resetBoard()
 		blackKingLoc.row = 1;
 		blackKingLoc.col = 1;
 
-		whiteKingLoc.row = 3;
+		whiteKingLoc.row = 8;
 		whiteKingLoc.col = 1;
 
 		_board[whiteKingLoc.row][whiteKingLoc.col] = new King(WHITE);
@@ -160,7 +160,15 @@ bool Board::moveUnit(std::string str,bool whiteTurn)
 		// int eRow = str[3]-48;
 		// std::cout<<s<<e;
 		
-		return moveUnit(s,e,whiteTurn);
+		if(moveUnit(s,e,whiteTurn))
+		{
+			return true;
+		} 
+		else
+		{
+			cout<<ILLEGAL_MOVE;
+			return false;
+		}
 	}
 bool Board::moveUnit(Point s,Point e,bool whiteTurn)
 {

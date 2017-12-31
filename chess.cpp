@@ -9,6 +9,10 @@ using std::string;
 #include <cmath>
 using std::abs;
 using namespace std;
+
+string CHECK_MSG = "\33[37;41mCheck!\33[0m\n";
+string ILLEGAL_MOVE_MSG = "\33[37;41millegal move\33[0m\n";
+
 int test10()
 {
 	Board b;
@@ -23,7 +27,7 @@ int test10()
 
 	bool whiteTurn = true;
 	std::string input;
-
+	// bool isValidMove=false;
 	std::cout<<"\33[2J";
 	while (true)
 	{
@@ -35,7 +39,7 @@ int test10()
 		
 		b.printBoard();
 		cout<<"possibelmove,check: "<<existsPossibleMove<<","<<isCheck<<endl;
-		if (isCheck && existsPossibleMove) std::cout<<"Check!\n";
+		if (isCheck && existsPossibleMove) std::cout<<CHECK_MSG;
 		else if (isCheck && !existsPossibleMove) 
 		{
 			std::string winner = (whiteTurn) ? blackName : whiteName;
@@ -47,10 +51,20 @@ int test10()
 				std::cout<<"Tie, no winners!\n";
 				return 0;
 			}
+
+		while (true)
+		{
 		std::string curName = (whiteTurn) ? whiteName : blackName;
 		std::cout<<curName<<": please enter your move:\n";
 		std::cin>>input;
-		if (b.moveUnit(input,whiteTurn)) whiteTurn = !whiteTurn;
+		if (b.moveUnit(input,whiteTurn)) break;
+		else cout<<ILLEGAL_MOVE_MSG;
+		b.printBoard();	
+		}
+
+		whiteTurn = !whiteTurn;
+		// isValidMove=false;
+		
 		//ADD PLAYER X WON!!
 	}
 
