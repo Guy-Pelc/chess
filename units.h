@@ -20,6 +20,7 @@ public:
 	static bool moveByStep(Point dir,Point s, Point e,Unit* b[][9], PLAYER _player);
 		
 	virtual bool isKing(){return false;};
+	virtual bool isPawn(){return false;};
 	std::string getUnix() {return _unix;};
 	PLAYER getPlayer() {return _player;};
 	bool setHasMoved(){_hasMoved=true;};

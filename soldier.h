@@ -11,6 +11,7 @@ public:
 	~Soldier(){};
 	bool move(Point s,Point e, Unit* b[][9]) override;
 	Soldier *clone() override;
+	bool isPawn() override {return true;};
 };
 
 #endif
