@@ -69,30 +69,7 @@ bool Board::isKingExposed(PLAYER player)
 	{
 		// cout<<"checking board::isKingExposed, player "<<player<<"...\n";
 		Point kingLocation = (player==WHITE) ? whiteKingLoc : blackKingLoc;
-		// cout<<"king location: "<<kingLocation<<endl;
-		// PLAYER attackingPlayer = (player==WHITE) ? BLACK : WHITE;
-		for (int row=1;row<=8;row++)
-		{
-			for (int col=1;col<=8;col++)
-			{
-				Unit *curUnit=_board[row][col];
-				if (curUnit==nullptr) continue;
-				else if (curUnit->getPlayer()==player) continue;
-				// if (curUnit->getPlayer==player) continue;
-				
-				Point curLocation;
-				curLocation.row = row;
-				curLocation.col = col;
-				if (curUnit->move(curLocation,kingLocation,_board)==true) 
-					{
-
-						std::cout<<"EXPOSED! location of offender:"<<curLocation<<std::endl;
-						return true;
-					}
-			}
-		}
-		// cout<<"king not exposed\n";
-		return false;
+		return _board[kingLocation.row][kingLocation.col]->isExposed(kingLocation, _board);
 	}
 
 void Board::resetBoard()

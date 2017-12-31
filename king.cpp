@@ -5,6 +5,8 @@
 using std::abs;
 using std::cout;
 
+
+
 King::King(PLAYER player)
 :Unit(player)
 {

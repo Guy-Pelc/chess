@@ -1,6 +1,34 @@
 #include "units.h"
 
 
+bool Unit::isExposed(Point expLocation, Unit *_board[][9])
+{
+	// cout<<"king location: "<<kingLocation<<endl;
+		// PLAYER attackingPlayer = (player==WHITE) ? BLACK : WHITE;
+		for (int row=1;row<=8;row++)
+		{
+			for (int col=1;col<=8;col++)
+			{
+				Unit *curUnit=_board[row][col];
+				if (curUnit==nullptr) continue;
+				else if (curUnit->getPlayer()==_player) continue;
+				// if (curUnit->getPlayer==player) continue;
+				
+				Point curLocation;
+				curLocation.row = row;
+				curLocation.col = col;
+				if (curUnit->move(curLocation,expLocation,_board)==true) 
+					{
+
+						std::cout<<"EXPOSED! location of offender:"<<curLocation<<std::endl;
+						return true;
+					}
+			}
+		}
+		// cout<<"king not exposed\n";
+		return false;
+}
+
 Unit::Unit(PLAYER player) 
 {
 	_player = player;

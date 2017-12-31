@@ -15,7 +15,8 @@ public:
 	Unit(PLAYER player);
 	virtual ~Unit(){};
 	// virtual ~Unit(){std::cout<<"Unit destructor\n";} ;
-	
+	bool isExposed(Point expLocation, Unit *_board[][9]);
+
 	virtual bool move(Point s,Point e, Unit* b[][9])=0;
 	static bool moveByStep(Point dir,Point s, Point e,Unit* b[][9], PLAYER _player);
 		
