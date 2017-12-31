@@ -1,10 +1,10 @@
 #include "soldier.h"
-using std::cout;
+using namespace std;
 
 Soldier::Soldier(PLAYER player) 
 :Unit(player)
 {
-	std::cout<<"Soldier constructor\n";
+	// std::cout<<"Soldier constructor\n";
 	_unix =playerToString(player) + unitToString(SOLDIER) ;
 }
 bool Soldier::move(Point s,Point e, Unit* b[][9])
@@ -15,7 +15,9 @@ bool Soldier::move(Point s,Point e, Unit* b[][9])
 	//check that soldier goes in right direction
 	if (dir.row*playerRowDir<=0) 
 		{
-			cout<<"wrong direction!";
+			// cout<<"s:"<<s<<"e:"<<e<<endl;
+			// cout<<dir<<endl;
+			// cout<<"wrong direction!\n";
 			return false; 
 		}
 	//if soldier moves, not eats
@@ -78,4 +80,10 @@ bool Soldier::move(Point s,Point e, Unit* b[][9])
 	// }
 	// // cout<<"here 39";
 	// return false;
+}
+Soldier *Soldier::clone()
+{
+	Soldier *copy = new Soldier(_player);
+	copy->_hasMoved = _hasMoved;
+	return copy;
 }

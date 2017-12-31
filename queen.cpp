@@ -5,10 +5,16 @@
 using std::abs;
 using std::cout;
 
+Queen *Queen::clone()
+{
+	Queen *copy = new Queen(_player);
+	copy->_hasMoved = _hasMoved;
+	return copy;
+}
 Queen::Queen(PLAYER player)
 :Unit(player)
 {
-	std::cout<<"Queen constructor\n";
+	// std::cout<<"Queen constructor\n";
 	_unix = playerToString(player) + unitToString(QUEEN);
 }
 bool Queen::move(Point s, Point e, Unit* b[][9])

@@ -8,7 +8,7 @@ using std::cout;
 King::King(PLAYER player)
 :Unit(player)
 {
-	std::cout<<"King constructor\n";
+	// std::cout<<"King constructor\n";
 	_unix = playerToString(player) + unitToString(KING);
 }
 bool King::move(Point s, Point e, Unit* b[][9])
@@ -23,7 +23,12 @@ bool King::move(Point s, Point e, Unit* b[][9])
 	
 	
 	// return moveByStep
-	// return moveByStep();
-	
-	
+	// return moveByStep();	
+}
+King *King::clone()
+{
+	King *copy = new King(_player);
+		copy->_hasMoved = _hasMoved;
+			return copy;
+
 }
