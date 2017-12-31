@@ -47,40 +47,9 @@ bool Rook::move(Point s, Point e, Unit* b[][9])
 	// //empty path, empty destination
 	// return true;
 }
-// bool Rook::move(Point s,Point e, Unit* b[][9])
-// {
-// 	if (s.x==e.x)
-// 	{
-// 		int direction = (s.y<e.y) ? 1 : -1;
-// 		while(s.y!=e.y)
-// 		{
-// 			s.y+=direction;
-
-// 			Unit* curTile = b[s.x][s.y];
-// 			// while path is empty proceed. if destination is empty succeed
-// 			if (b[s.x][s.y]==nullptr)
-// 			{
-// 				if (s.y==e.y)
-// 				{
-// 					return true;
-// 				}
-// 				continue;
-// 			}
-// 			// to eat or not to eat
-// 			else if (s.y!=e.y)
-// 			{
-// 				return false;
-// 			}
-// 			else if (b[e.x][e.y]->getPlayer()==_player)
-// 			{
-// 				return false;
-// 			}
-// 			else
-// 			{
-// 				delete b[e.x][e.y];
-// 				return true;
-// 			}
-// 		}
-// 	}
-// 	return false;
-// }
+Rook *Rook::clone()
+{
+	Rook *copy = new Rook(_player);
+	copy->_hasMoved = _hasMoved;
+	return copy;
+}

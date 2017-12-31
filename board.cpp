@@ -64,18 +64,19 @@ void Board::resetBoard()
 			}
 		}
 		
-		blackKingLoc.row = 1;
+		blackKingLoc.row = 3;
 		blackKingLoc.col = 1;
 
 		whiteKingLoc.row = 1;
 		whiteKingLoc.col = 4;
 
-		// _board[whiteKingLoc.row][whiteKingLoc.col] = new King(WHITE);
-		// _board[blackKingLoc.row][blackKingLoc.col] = new King(BLACK);
+		_board[whiteKingLoc.row][whiteKingLoc.col] = new King(WHITE);
+		_board[blackKingLoc.row][blackKingLoc.col] = new King(BLACK);
 		
 		// _board[4][4] = new Queen(BLACK);
 		// _board[4][3] = new Queen(WHITE);
 		
+		_board[2][1] = new Rook(BLACK);
 		_board[1][1] = new Soldier(WHITE);
 
 		// _board[2][2] = new Queen(WHITE);

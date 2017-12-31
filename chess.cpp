@@ -79,7 +79,7 @@ int test11()
 int main()
 {
 	// std::cout<<"hello world\n\n";
-	test11();	
+	test10();	
 }
 
 // void test5()

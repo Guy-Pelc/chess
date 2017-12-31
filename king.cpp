@@ -23,7 +23,12 @@ bool King::move(Point s, Point e, Unit* b[][9])
 	
 	
 	// return moveByStep
-	// return moveByStep();
-	
-	
+	// return moveByStep();	
+}
+King *King::clone()
+{
+	King *copy = new King(_player);
+		copy->_hasMoved = _hasMoved;
+			return copy;
+
 }

@@ -10,6 +10,7 @@ public:
 	~King(){std::cout<<"King destructor\n";};
 	bool move(Point s,Point e, Unit* b[][9]) override;
 	bool isKing() override {return true;};
+	King *clone() override;
 };
 
 #endif

@@ -9,6 +9,8 @@ public:
 	Rook(PLAYER player);
 	~Rook(){std::cout<<"Rook destructor\n";};
 	bool move(Point s,Point e, Unit* b[][9]) override;
+	Rook *clone() override;
+
 };
 
 #endif
