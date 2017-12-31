@@ -23,6 +23,8 @@ public:
 	PLAYER getPlayer() {return _player;};
 	bool setHasMoved(){_hasMoved=true;};
 
+	virtual Unit *clone()=0;
+
 protected:
 	bool _hasMoved = false;
 	std::string _unix;

@@ -11,8 +11,23 @@ using std::string;
 class Board
 {
 	Unit* _board[9][9];  // [ROW][COL]
+
+	Point whiteKingLoc;
+	Point blackKingLoc;
 public:
 	Board();
+	~Board();
+	// {
+	// 	for (int row=0; row<9;row++)
+	// 	{
+	// 		for (int col=0;col<9;col++)
+	// 		{
+	// 			if (_board[row][col]!=nullptr)
+	// 				delete _board[row][col];
+	// 		}
+	// 	}
+	// };
+	Board(Point wKing, Point bKing, Unit* b[9][9]);
 	void resetBoard();
 	void printBoard();
 	bool moveUnit(Point s,Point e, bool whiteTurn);

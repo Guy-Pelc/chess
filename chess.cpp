@@ -64,10 +64,10 @@ int test11()
 		b.printBoard();
 		//ADD CHECK FOR CHECK!!
 		// std::string curName = (whiteTurn) ? whiteName : blackName;
-		if (b.isKingExposed(BLACK))
-			{
+		// if (b.isKingExposed(BLACK))
+		// 	{
 
-			}
+		// 	}
 		std::cout<<": please enter your move:\n";
 		std::cin>>input;
 
@@ -79,7 +79,7 @@ int test11()
 int main()
 {
 	// std::cout<<"hello world\n\n";
-	test10();	
+	test11();	
 }
 
 // void test5()

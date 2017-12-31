@@ -9,6 +9,7 @@ public:
 	Soldier(PLAYER player);
 	~Soldier(){std::cout<<"Soldier destructor\n";};
 	bool move(Point s,Point e, Unit* b[][9]) override;
+	Soldier *clone() override;
 };
 
 #endif
