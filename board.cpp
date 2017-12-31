@@ -103,7 +103,7 @@ void Board::resetBoard()
 		blackKingLoc.row = 1;
 		blackKingLoc.col = 1;
 
-		whiteKingLoc.row = 8;
+		whiteKingLoc.row = 3;
 		whiteKingLoc.col = 1;
 
 		_board[whiteKingLoc.row][whiteKingLoc.col] = new King(WHITE);
@@ -112,7 +112,7 @@ void Board::resetBoard()
 		// _board[4][4] = new Queen(BLACK);
 		// _board[4][3] = new Queen(WHITE);
 		
-		_board[2][2] = new Rook(WHITE);
+		_board[2][3] = new Rook(WHITE);
 		// _board[1][1] = new Soldier(WHITE);
 
 		// _board[2][2] = new Queen(WHITE);
@@ -148,7 +148,7 @@ void Board::resetBoard()
 		// _board[]
 
 	}
-	
+
 bool Board::moveUnit(std::string str,bool whiteTurn)
 	{
 		//PARSE INPUT
@@ -159,14 +159,19 @@ bool Board::moveUnit(std::string str,bool whiteTurn)
 		// int eCol = str[2]-64;
 		// int eRow = str[3]-48;
 		// std::cout<<s<<e;
-		Board copy(whiteKingLoc,blackKingLoc, _board);
+		
+		return moveUnit(s,e,whiteTurn);
+	}
+bool Board::moveUnit(Point s,Point e,bool whiteTurn)
+{
+	Board copy(whiteKingLoc,blackKingLoc, _board);
 		cout<<"printing copy board after move try..:\n";
-		if (copy.moveUnit(s,e,whiteTurn))
+		if (copy.moveUnitHelper(s,e,whiteTurn))
 		{
 			copy.printBoard();
 			cout<<"copyboard move success, now moving real board\n";
 
-			moveUnit(s,e,whiteTurn);	
+			moveUnitHelper(s,e,whiteTurn);	
 
 			return true;
 		}
@@ -176,10 +181,8 @@ bool Board::moveUnit(std::string str,bool whiteTurn)
 			cout<<"copyboard failed. invalid move..\n";
 			return false;
 		}
-		
-	}
-	
-bool Board::moveUnit(Point s,Point e,bool whiteTurn)
+}	
+bool Board::moveUnitHelper(Point s,Point e,bool whiteTurn)
 	{
 		PLAYER currentPlayer = (whiteTurn) ? WHITE : BLACK;
 		// Unit *currUnit = _board[s.col][s.row];

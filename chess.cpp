@@ -27,13 +27,13 @@ int test10()
 	std::cout<<"\33[2J";
 	while (true)
 	{
-		b.printBoard();
+		
 
 		PLAYER curPlayer = (whiteTurn) ? WHITE : BLACK;
 		bool isCheck = b.isKingExposed(curPlayer);
 		bool existsPossibleMove = b.existsPossibleMove(curPlayer);
 		
-
+		b.printBoard();
 		cout<<"possibelmove,check: "<<existsPossibleMove<<","<<isCheck<<endl;
 		if (isCheck && existsPossibleMove) std::cout<<"Check!\n";
 		else if (isCheck && !existsPossibleMove) 
