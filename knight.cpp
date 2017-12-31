@@ -5,10 +5,16 @@
 using std::abs;
 using std::cout;
 
+Knight *Knight::clone()
+{
+	Knight *copy = new Knight(_player);
+	copy->_hasMoved = _hasMoved;
+	return copy;
+}
 Knight::Knight(PLAYER player)
 :Unit(player)
 {
-	std::cout<<"Knight constructor\n";
+	// std::cout<<"Knight constructor\n";
 	_unix = playerToString(player) + unitToString(KNIGHT);
 }
 bool Knight::move(Point s, Point e, Unit* b[][9])
