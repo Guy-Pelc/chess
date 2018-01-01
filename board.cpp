@@ -94,29 +94,30 @@ void Board::resetBoard()
 
 		_board[1][1] = new Rook(WHITE);
 		_board[1][8] = new Rook(WHITE);
+		_board[2][4] = new Soldier(BLACK);
 
 
 
-		// int row = 1;
-		// PLAYER curColor = WHITE;
-		// for (int i = 0; i < 2; ++i)
-		// {
-		// 	_board[row][1] = new Rook(curColor);
-		// 	_board[row][2] = new Knight(curColor);
-		// 	_board[row][3] = new Bishop(curColor);
-			
-		// 	_board[row][5] = new Queen(curColor);
-		// 	_board[row][6] = new Bishop(curColor);
-		// 	_board[row][7] = new Knight(curColor);
-		// 	_board[row][8] = new Rook(curColor);
-		// 	row = 8;
-		// 	curColor = BLACK;
-		// }
-		// for (int i = 1; i < 9; ++i)
-		// {
-		// 	_board[2][i]= new Soldier(WHITE);
-		// 	_board[7][i]=new Soldier(BLACK);
-		// }
+//		 int row = 1;
+//		 PLAYER curColor = WHITE;
+//		 for (int i = 0; i < 2; ++i)
+//		 {
+//		 	_board[row][1] = new Rook(curColor);
+//		 	_board[row][2] = new Knight(curColor);
+//		 	_board[row][3] = new Bishop(curColor);
+//
+//		 	_board[row][5] = new Queen(curColor);
+//		 	_board[row][6] = new Bishop(curColor);
+//		 	_board[row][7] = new Knight(curColor);
+//		 	_board[row][8] = new Rook(curColor);
+//		 	row = 8;
+//		 	curColor = BLACK;
+//		 }
+//		 for (int i = 1; i < 9; ++i)
+//		 {
+//		 	_board[2][i]= new Soldier(WHITE);
+//		 	_board[7][i]=new Soldier(BLACK);
+//		 }
 
 
 

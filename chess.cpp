@@ -17,13 +17,13 @@ int test10()
 {
 	Board b;
 	
-	std::string whiteName = "w";
-	std::string blackName = "b"; 
+	std::string whiteName= "s";
+	std::string blackName= "b";
 
-	// std::cout<<"Enter white player name:\n";
-	// std::cin>>whiteName;
-	// std::cout<<"Enter black player name:\n";
-	// std::cin>> blackName;
+//	 std::cout<<"Enter white player name:\n";
+//	 std::cin>>whiteName;
+//	 std::cout<<"Enter black player name:\n";
+//	 std::cin>> blackName;
 
 	bool whiteTurn = true;
 	std::string input;
