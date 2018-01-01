@@ -15,7 +15,6 @@ std::string unitToString(unitUNIX unit)
 {
 	switch (unit)
 	{
-		// case (EMPTY): return " ";
 		case (SOLDIER): return "\u265F";
 		case (ROOK): return "\u265C";
 		case (BISHOP): return "\u265D";
@@ -28,6 +27,5 @@ std::string unitToString(unitUNIX unit)
 
 std::ostream& operator<<(std::ostream& os, const unitUNIX unit)
 {
-	// return os<<"HELLO TEST";
 	return os<<unitToString(unit);
 }

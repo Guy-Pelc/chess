@@ -1,17 +1,11 @@
 #include "king.h"
-
-
 #include <cmath>
 using std::abs;
-//using std::cout;
-//using namespace std;
-
 
 
 King::King(PLAYER player)
 :Unit(player)
 {
-	// std::cout<<"King constructor\n";
 	_unix = playerToString(player) + unitToString(KING);
 }
 bool King::move(Point s, Point e, Unit* b[][9])
@@ -25,41 +19,31 @@ bool King::move(Point s, Point e, Unit* b[][9])
 		abs(dir.col)==2 &&
 		!_hasMoved)
 	{
-//		cout<<"possible hatsraha...\n";
-
-		//if moving left:
 		//normalize dir vec
 		dir.col = dir.col/abs(dir.col);
 
 		if (b[s.row][s.col+dir.col]!= nullptr)return false;
 		if (b[e.row][e.col]!= nullptr) return false;
-		//if moving reight check G col
+
+		//if moving right check G col
 		Unit *possibleRook= b[s.row][1];
 		if (dir.col>0) 
 		{
 			possibleRook = b[s.row][8];
 			if (b[s.row][7]!=nullptr)return false;
 		}
-		//check rook exists and hasnt moved yet.
+
+		//check rook exists and hasn't moved yet.
 		if (possibleRook==nullptr) return false;				
 		if (possibleRook->getHasMoved()) return false;
+
 		// check king is not exposed
-//		cout<<"still need to check not exposed...\n";
-		Point curLoc = s;
 		if (isExposed(s,b)) return false;
 		s.col+=dir.col;
 		if (isExposed(s,b)) return false;
 		if (isExposed(e,b)) return false;
-//		cout<<"hatsraha is possible!!\n";
-
-		//move rook to place
-//		cout<<"dir is: "<<dir<<endl;
-//		cout<<"s is: "<<s<<endl;
-		
-//		cout<<"success! returning true\n";
 
 		return true;
-
 	}
 		
 

@@ -3,18 +3,13 @@
 
 #include "unix.h"
 #include "point.h"
-
-#include <iostream>
 #include <string>
 
 class Unit
 {
 public:
-	// static void testFun();
-	// Unit() ;
 	Unit(PLAYER player);
 	virtual ~Unit(){};
-	// virtual ~Unit(){std::cout<<"Unit destructor\n";} ;
 	bool isExposed(Point expLocation, Unit *_board[][9]);
 
 	virtual bool move(Point s,Point e, Unit* b[][9])=0;
@@ -33,6 +28,5 @@ protected:
 	std::string _unix;
 	PLAYER _player;
 };
-
 
 #endif

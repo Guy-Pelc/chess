@@ -51,14 +51,8 @@ point.h
 /cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/chess.cpp
 iostream
 -
-string
--
 board.h
 /cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/board.h
-units.h
-/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/units.h
-unix.h
-/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/unix.h
 cmath
 -
 
@@ -127,8 +121,6 @@ unix.h
 /cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/unix.h
 point.h
 /cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/point.h
-iostream
--
 string
 -
 

@@ -3,7 +3,6 @@
 
 #include <cmath>
 using std::abs;
-//using std::cout;
 
 Knight *Knight::clone()
 {
@@ -14,7 +13,6 @@ Knight *Knight::clone()
 Knight::Knight(PLAYER player)
 :Unit(player)
 {
-	// std::cout<<"Knight constructor\n";
 	_unix = playerToString(player) + unitToString(KNIGHT);
 }
 bool Knight::move(Point s, Point e, Unit* b[][9])
@@ -27,9 +25,5 @@ bool Knight::move(Point s, Point e, Unit* b[][9])
 	if (abs(dir.row/dir.col)==2 || abs(dir.col/dir.row)==2) return  moveByStep(dir,s,e,b,_player);
 	
 	return false;
-	
-	// return moveByStep
-	// return moveByStep();
-	
 	
 }

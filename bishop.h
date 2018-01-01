@@ -2,14 +2,12 @@
 #define _BISHOP
 
 #include "units.h"
-// #include "point.h"
-class Bishop : public Unit 
+class Bishop : public Unit
 {
 public:
 	Bishop *clone() override;
 	Bishop(PLAYER player);
 	~Bishop(){};
-	// ~Bishop(){std::cout<<"Bishop destructor\n";};
 	bool move(Point s,Point e, Unit* b[][9]) override;
 };
 
