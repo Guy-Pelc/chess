@@ -194,6 +194,25 @@ bool Board::moveUnitHelper(Point s,Point e,bool whiteTurn)
 			// std::cout<<"here 103!";
 			if (currUnit->isKing())
 			{
+				//if hatsraha update rook
+				if (e.col-s.col==2)
+				{
+					Point dir = e-s;
+					if (dir.col>0)
+					{
+						cout<<"here 203 boardcpp\n";
+						Unit* rookToMove = _board[s.row][8];
+						_board[s.row][5]=rookToMove;
+						_board[s.row][8]=nullptr;
+					}
+					else
+					{
+						cout<<"here 210 boardcpp\n";
+						Unit *rookToMove = _board[s.row][1];
+						_board[s.row][3]=rookToMove;
+						_board[s.row][8]=nullptr;
+					}
+				}
 				if (currUnit->getPlayer()==WHITE)
 				{
 					// std::cout<<"white king moved!!\n";
@@ -204,7 +223,10 @@ bool Board::moveUnitHelper(Point s,Point e,bool whiteTurn)
 					// std::cout<<"black king moved!!\n";
 					blackKingLoc = e;
 				}
-				
+			//FOR DEBUG ONLY, DELETE ME
+			_board[s.row][s.col]=nullptr;
+			_board[e.row][e.col]=currUnit;
+				return true;
 			}
 
 			eatAt(e);

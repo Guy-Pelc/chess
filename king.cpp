@@ -4,6 +4,7 @@
 #include <cmath>
 using std::abs;
 using std::cout;
+using namespace std;
 
 
 
@@ -44,7 +45,20 @@ bool King::move(Point s, Point e, Unit* b[][9])
 		if (possibleRook->getHasMoved()) return false;
 		// check king is not exposed
 		cout<<"still need to check not exposed...\n";
-		return false;
+		Point curLoc = s;
+		if (isExposed(s,b)) return false;
+		curLoc.col+=dir.col;
+		if (isExposed(s,b)) return false;
+		if (isExposed(e,b)) return false;
+		cout<<"hatsraha is possible!!\n";
+
+		//move rook to place
+		cout<<"dir is: "<<dir<<endl;
+		cout<<"s is: "<<s<<endl;
+		
+		cout<<"success! returning true\n";
+
+		return true;
 
 	}
 		
