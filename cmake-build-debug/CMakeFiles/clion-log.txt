@@ -1,0 +1,4 @@
+C:\Users\Guype\.CLion2017.3\system\cygwin_cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=C:/cygwin64/bin/make.exe -G "CodeBlocks - Unix Makefiles" "/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/cmake-build-debug

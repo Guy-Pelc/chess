@@ -6,6 +6,7 @@
 #include "queen.h"
 #include "knight.h"
 #include "king.h"
+#include "point.h"
 
 #include <iostream>
 #include <cassert>
@@ -157,7 +158,7 @@ bool Board::moveUnit(Point s,Point e,bool whiteTurn)
 		}
 		else
 		{
-			copy.printBoard();
+//			copy.printBoard();
 			// cout<<"copyboard failed. invalid move..\n";
 			return false;
 		}
@@ -188,29 +189,30 @@ bool Board::moveUnitHelper(Point s,Point e,bool whiteTurn)
 			if (currUnit->move(s,e,_board)== false)
 			{
 				// cout<<"boardcpp 169\n";
-				std::cout<<"invalid move\n";
+//				std::cout<<"invalid move\n";
 				return false;
 			}
 			// std::cout<<"here 103!";
 			if (currUnit->isKing())
 			{
 				//if hatsraha update rook
-				if (e.col-s.col==2)
+				Point dir = e-s;
+
+				if (abs(dir.col)==2)
 				{
-					Point dir = e-s;
 					if (dir.col>0)
 					{
-						cout<<"here 203 boardcpp\n";
+//						cout<<"here 203 boardcpp\n";
 						Unit* rookToMove = _board[s.row][8];
 						_board[s.row][5]=rookToMove;
 						_board[s.row][8]=nullptr;
 					}
 					else
 					{
-						cout<<"here 210 boardcpp\n";
+//						cout<<"here 210 boardcpp\n";
 						Unit *rookToMove = _board[s.row][1];
 						_board[s.row][3]=rookToMove;
-						_board[s.row][8]=nullptr;
+						_board[s.row][1]=nullptr;
 					}
 				}
 				if (currUnit->getPlayer()==WHITE)
@@ -223,10 +225,7 @@ bool Board::moveUnitHelper(Point s,Point e,bool whiteTurn)
 					// std::cout<<"black king moved!!\n";
 					blackKingLoc = e;
 				}
-			//FOR DEBUG ONLY, DELETE ME
-			_board[s.row][s.col]=nullptr;
-			_board[e.row][e.col]=currUnit;
-				return true;
+
 			}
 
 			eatAt(e);
@@ -245,7 +244,7 @@ bool Board::moveUnitHelper(Point s,Point e,bool whiteTurn)
 			//check if enemy king is exposed, 
 			if (isKingExposed(currentPlayer))
 			{
-				cout<<"KING CAN BE KILLED! ILLEGAL MOVE";
+//				cout<<"KING CAN BE KILLED! ILLEGAL MOVE";
 				return false;
 			}
 

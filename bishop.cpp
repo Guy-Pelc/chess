@@ -3,7 +3,7 @@
 
 #include <cmath>
 using std::abs;
-using std::cout;
+//using std::cout;
 
 Bishop *Bishop::clone()
 {

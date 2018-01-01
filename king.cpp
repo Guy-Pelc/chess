@@ -3,8 +3,8 @@
 
 #include <cmath>
 using std::abs;
-using std::cout;
-using namespace std;
+//using std::cout;
+//using namespace std;
 
 
 
@@ -25,7 +25,7 @@ bool King::move(Point s, Point e, Unit* b[][9])
 		abs(dir.col)==2 &&
 		!_hasMoved)
 	{
-		cout<<"possible hatsraha...\n";
+//		cout<<"possible hatsraha...\n";
 
 		//if moving left:
 		//normalize dir vec
@@ -44,19 +44,19 @@ bool King::move(Point s, Point e, Unit* b[][9])
 		if (possibleRook==nullptr) return false;				
 		if (possibleRook->getHasMoved()) return false;
 		// check king is not exposed
-		cout<<"still need to check not exposed...\n";
+//		cout<<"still need to check not exposed...\n";
 		Point curLoc = s;
 		if (isExposed(s,b)) return false;
-		curLoc.col+=dir.col;
+		s.col+=dir.col;
 		if (isExposed(s,b)) return false;
 		if (isExposed(e,b)) return false;
-		cout<<"hatsraha is possible!!\n";
+//		cout<<"hatsraha is possible!!\n";
 
 		//move rook to place
-		cout<<"dir is: "<<dir<<endl;
-		cout<<"s is: "<<s<<endl;
+//		cout<<"dir is: "<<dir<<endl;
+//		cout<<"s is: "<<s<<endl;
 		
-		cout<<"success! returning true\n";
+//		cout<<"success! returning true\n";
 
 		return true;
 

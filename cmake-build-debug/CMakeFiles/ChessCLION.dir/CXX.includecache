@@ -1,0 +1,144 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/bishop.cpp
+bishop.h
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/bishop.h
+cmath
+-
+
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/bishop.h
+units.h
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/units.h
+
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/board.cpp
+board.h
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/board.h
+unix.h
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/unix.h
+soldier.h
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/soldier.h
+rook.h
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/rook.h
+bishop.h
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/bishop.h
+queen.h
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/queen.h
+knight.h
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/knight.h
+king.h
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/king.h
+point.h
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/point.h
+iostream
+-
+cassert
+-
+
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/board.h
+string
+-
+units.h
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/units.h
+point.h
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/point.h
+
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/chess.cpp
+iostream
+-
+string
+-
+board.h
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/board.h
+units.h
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/units.h
+unix.h
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/unix.h
+cmath
+-
+
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/king.cpp
+king.h
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/king.h
+cmath
+-
+
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/king.h
+units.h
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/units.h
+
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/knight.cpp
+knight.h
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/knight.h
+cmath
+-
+
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/knight.h
+units.h
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/units.h
+
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/point.cpp
+point.h
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/point.h
+
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/point.h
+iostream
+-
+
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/queen.cpp
+queen.h
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/queen.h
+cmath
+-
+
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/queen.h
+units.h
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/units.h
+
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/rook.cpp
+rook.h
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/rook.h
+cmath
+-
+
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/rook.h
+units.h
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/units.h
+
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/soldier.cpp
+soldier.h
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/soldier.h
+
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/soldier.h
+units.h
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/units.h
+
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/units.cpp
+units.h
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/units.h
+
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/units.h
+unix.h
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/unix.h
+point.h
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/point.h
+iostream
+-
+string
+-
+
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/unix.cpp
+unix.h
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/unix.h
+string
+-
+
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/unix.h
+string
+-
+

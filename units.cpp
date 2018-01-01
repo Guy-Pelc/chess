@@ -20,7 +20,7 @@ bool Unit::isExposed(Point expLocation, Unit *_board[][9])
 				if (curUnit->move(curLocation,expLocation,_board)==true) 
 					{
 
-						std::cout<<"EXPOSED! location of offender:"<<curLocation<<std::endl;
+//						std::cout<<"EXPOSED! location of offender:"<<curLocation<<std::endl;
 						return true;
 					}
 			}

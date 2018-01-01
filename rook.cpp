@@ -3,8 +3,8 @@
 #include <cmath>
 using std::abs;
 
-using std::cout;
-using std::endl;
+//using std::cout;
+//using std::endl;
 
 Rook::Rook(PLAYER player)
 :Unit(player)
@@ -17,14 +17,14 @@ bool Rook::move(Point s, Point e, Unit* b[][9])
 
 	Point dir = e-s;
 
-	cout<<"dir: "<<dir<<endl;
+//	cout<<"dir: "<<dir<<endl;
 	if (dir.row==0 && dir.col==0) return false;
 	else if (dir.row!=0 && dir.col!=0) return false;
 	
-	cout<<"here 21";
+//	cout<<"here 21";
 	if (dir.row!=0) dir.row = dir.row/abs(dir.row);
 	else dir.col= dir.col/abs(dir.col);
-	cout<<"dir: "<<dir<<endl;
+//	cout<<"dir: "<<dir<<endl;
 	return moveByStep(dir,s,e,b,_player);
 	// while (!(s==e))
 	// {

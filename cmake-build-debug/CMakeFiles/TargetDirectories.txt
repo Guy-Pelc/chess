@@ -1,0 +1,3 @@
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/cmake-build-debug/CMakeFiles/edit_cache.dir
+/cygdrive/d/MEGA/-MY PROJECTS-/2016 HUJI/67317 C++ programming/Ex2/ChessCLION/cmake-build-debug/CMakeFiles/ChessCLION.dir

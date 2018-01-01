@@ -1,5 +1,5 @@
 #include "soldier.h"
-using namespace std;
+//using namespace std;
 
 Soldier::Soldier(PLAYER player) 
 :Unit(player)
