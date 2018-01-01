@@ -1,4 +1,5 @@
 #include "king.h"
+#include "point.h"
 #include <cmath>
 using std::abs;
 
@@ -39,10 +40,25 @@ bool King::move(Point s, Point e, Unit* b[][9])
 
 		// check king is not exposed
 		if (isExposed(s,b)) return false;
+
+		//check for intermediate tile
+		Unit *king = b[s.row][s.col];
+		b[s.row][s.col] = nullptr;
 		s.col+=dir.col;
+		b[s.row][s.col] = king;
+
 		if (isExposed(s,b)) return false;
+
+		//check for last tile
+		b[s.row][s.col] = nullptr;
+		s.col+=dir.col;
+		b[s.row][s.col] = king;
 		if (isExposed(e,b)) return false;
 
+		//reset king to original tile
+		b[s.row][s.col] = nullptr;
+		s.col-=2*dir.col;
+		b[s.row][s.col] = king;
 		return true;
 	}
 		

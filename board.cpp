@@ -222,6 +222,7 @@ Board::Board()
 		_board[whiteKingLoc.row][whiteKingLoc.col] = new King(WHITE);
 
 
+
 		int row = 1;
 		PLAYER curColor = WHITE;
 		for (int i = 0; i < 2; ++i)
